@@ -1,0 +1,27 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# built stuff
+/build/
+/.gradle/
+
+# eclipse
+.classpath
+.project
+/.settings/
+/bin/
+
+
+#emacs
+.#*
+
+#other
+output
+out
