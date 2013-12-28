@@ -13,11 +13,12 @@ import com.alexdforeman.emu.emulator.State;
  */
 public class OpCode77Test {
 
-    private static final int _INITIAL_A = 0x2401;
+    private static final int _INITIAL_A = 0xFF;
     private static final int _INITIAL_PC = 0x1A33;
     private static final int _FINAL_PC = 0x1A34;
-    private static final int _FINAL_H = 0x0024;
-    private static final int _FINAL_L = 0x0001;
+    private static final int _INITIAL_H = 0x0024;
+    private static final int _INITIAL_L = 0x0001;
+    private static final int _INITIAL_M = 0x2401;
 
     /**
      * Test the LXI SP command correctly loads the SP.
@@ -28,12 +29,12 @@ public class OpCode77Test {
         final State state = StateHelper.getState();
         state.setPc(_INITIAL_PC);
         state.setA(_INITIAL_A);
-        state.setH(1);
-        state.setL(1);
+        state.setH(_INITIAL_H);
+        state.setL(_INITIAL_L);
         IOpCode opcode = new OpCode77();
         opcode.exec(state);
         Assert.assertEquals(_FINAL_PC, state.getPc());
-        Assert.assertEquals(_FINAL_H, state.getH());
-        Assert.assertEquals(_FINAL_L, state.getL());
+        int[] memory = state.getMemory();
+        Assert.assertEquals(_INITIAL_A, memory[_INITIAL_M]);
     }
 }

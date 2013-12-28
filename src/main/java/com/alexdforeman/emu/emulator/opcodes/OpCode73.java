@@ -3,8 +3,8 @@ package com.alexdforeman.emu.emulator.opcodes;
 import com.alexdforeman.emu.emulator.State;
 
 /**
- * OpCode 0x73 MOV M,D.
- * Move D to M or the HL pair.
+ * OpCode 0x73 MOV M,E.
+ * Move E to M or the HL pair.
  * @author http://github.com/alexdforeman
  */
 public class OpCode73 implements IOpCode {
@@ -14,9 +14,8 @@ public class OpCode73 implements IOpCode {
      */
     @Override
     public final void exec(State state_) {
-        int d = state_.getD();
-        state_.setH((d >>> _SHIFT) & _UNSIGNED_MASK);
-        state_.setL(d & _UNSIGNED_MASK);
+        int memLocation = (state_.getH() << _SHIFT) | state_.getL();
+        state_.getMemory()[memLocation] = state_.getE();
         state_.setPc(state_.getPc() + 1);
     }
 }

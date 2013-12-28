@@ -8,12 +8,11 @@ import org.junit.Test;
 import com.alexdforeman.emu.emulator.State;
 
 /**
- * Test the OpCode73 class.
+ * Test the OpCode75 class.
  * @author http://github.com/alexdforeman
  */
-public class OpCode73Test {
+public class OpCode75Test {
 
-    private static final int _INITIAL_E = 0xFF;
     private static final int _INITIAL_PC = 0x1A33;
     private static final int _FINAL_PC = 0x1A34;
     private static final int _INITIAL_H = 0x0024;
@@ -28,13 +27,12 @@ public class OpCode73Test {
     public final void test() throws IOException {
         final State state = StateHelper.getState();
         state.setPc(_INITIAL_PC);
-        state.setE(_INITIAL_E);
         state.setH(_INITIAL_H);
         state.setL(_INITIAL_L);
-        IOpCode opcode = new OpCode73();
+        IOpCode opcode = new OpCode75();
         opcode.exec(state);
         Assert.assertEquals(_FINAL_PC, state.getPc());
         int[] memory = state.getMemory();
-        Assert.assertEquals(_INITIAL_E, memory[_INITIAL_M]);
+        Assert.assertEquals(_INITIAL_L, memory[_INITIAL_M]);
     }
 }

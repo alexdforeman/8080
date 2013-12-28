@@ -14,9 +14,8 @@ public class OpCode77 implements IOpCode {
      */
     @Override
     public final void exec(State state_) {
-        int a = state_.getA();
-        state_.setH((a >>> _SHIFT) & _UNSIGNED_MASK);
-        state_.setL(a & _UNSIGNED_MASK);
+        int memLocation = (state_.getH() << _SHIFT) | state_.getL();
+        state_.getMemory()[memLocation] = state_.getA();
         state_.setPc(state_.getPc() + 1);
     }
 }
