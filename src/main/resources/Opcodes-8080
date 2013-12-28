@@ -117,7 +117,7 @@
 0x74:MOV M,H:1: :(HL) <- H:
 0x75:MOV M,L:1: :(HL) <- L:
 0x76:HLT:1: :special:
-0x77:MOV M,A:1: :(HL) <- C:
+0x77:MOV M,A:1: :(HL) <- A:
 0x78:MOV A,B:1: :A <- B:
 0x79:MOV A,C:1: :A <- C:
 0x7a:MOV A,D:1: :A <- D:
