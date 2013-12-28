@@ -31,12 +31,13 @@ public class Emulator {
      * Start executing the Emulator.
      */
     public final void start() {
+        int i = 1;
         while (true) {
             int instruction = _state.getMemory()[_state.getPc()];
-            System.out.println(Integer.toHexString(instruction));
+            System.out.println("-- " + Integer.toHexString(instruction));
             IOpCode opcode = OpcodeCache.get(instruction);
             opcode.exec(_state);
-            System.out.println("ok");
+            System.out.println(i++);
         }
     }
 

@@ -5,6 +5,8 @@ import java.util.Map;
 
 import com.alexdforeman.emu.emulator.opcodes.IOpCode;
 import com.alexdforeman.emu.emulator.opcodes.OpCode06;
+import com.alexdforeman.emu.emulator.opcodes.OpCode11;
+import com.alexdforeman.emu.emulator.opcodes.OpCode21;
 import com.alexdforeman.emu.emulator.opcodes.OpCode31;
 import com.alexdforeman.emu.emulator.opcodes.OpCodeC3;
 import com.alexdforeman.emu.emulator.opcodes.OpCodeCD;
@@ -21,6 +23,8 @@ public final class OpcodeCache {
         //CHECKSTYLE:OFF
         _OPCODES.put(0x00, new OpCodeNop());
         _OPCODES.put(0x06, new OpCode06());
+        _OPCODES.put(0x11, new OpCode11());
+        _OPCODES.put(0x21, new OpCode21());
         _OPCODES.put(0x31, new OpCode31());
         _OPCODES.put(0xC3, new OpCodeC3());
         _OPCODES.put(0xCD, new OpCodeCD());

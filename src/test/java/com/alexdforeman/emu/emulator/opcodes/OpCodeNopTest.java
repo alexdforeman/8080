@@ -8,26 +8,21 @@ import org.junit.Test;
 import com.alexdforeman.emu.emulator.State;
 
 /**
- * Test the OpCode31 class.
+ * Test the OpCodeNop class.
  * @author http://github.com/alexdforeman
  */
-public class OpCode31Test {
-
-    private static final int _INITIAL_SP = 0x0000;
-    private static final int _FINAL_SP = 0x2400;
-    private static final int _PC_ADDR = 0x18D4;
+public class OpCodeNopTest {
 
     /**
-     * Test the LXI SP command correctly loads the SP.
+     * Test NOP advances the pc and nothing else.
      * @throws IOException If we cant load the file
      */
     @Test
     public final void test() throws IOException {
         final State state = StateHelper.getState();
-        state.setSp(_INITIAL_SP);
-        state.setPc(_PC_ADDR);
-        IOpCode opcode = new OpCode31();
+        final int pc = state.getPc();
+        final IOpCode opcode = new OpCodeNop();
         opcode.exec(state);
-        Assert.assertEquals(_FINAL_SP, state.getSp());
+        Assert.assertEquals(pc + 1, state.getPc());
     }
 }
