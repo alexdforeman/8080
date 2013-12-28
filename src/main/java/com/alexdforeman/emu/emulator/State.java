@@ -155,11 +155,9 @@ public class State {
      * Getter.
      * @return int[]
      */
-    //CHECKSTYLE:OFF
     public final int[] getMemory() {
         return _memory;
     }
-    //CHECKSTYLE:ON
     /**
      * Setter.
      * @param memory_ int[]
