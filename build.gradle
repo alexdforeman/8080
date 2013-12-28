@@ -32,8 +32,8 @@ dependencies{
     testCompile "junit:junit:4.11"
 }
 
-
 tasks.withType(FindBugs) {
+    excludeFilter = file("$rootProject.projectDir/config/findbugs/exclude.xml")
   reports {
     xml.enabled = false
     html.enabled = true

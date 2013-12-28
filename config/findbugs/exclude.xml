@@ -1,0 +1,21 @@
+<FindBugsFilter>
+
+    <Match>
+        <Class name="com.alexdforeman.emu.emulator.State" />
+        <Bug  pattern="EI_EXPOSE_REP" />
+    </Match>
+
+    <Match>
+        <Class name="com.alexdforeman.emu.emulator.Emulator" />
+        <Bug  pattern="DMI_HARDCODED_ABSOLUTE_FILENAME" />
+    </Match>
+
+    <Match>
+        <Class name="com.alexdforeman.emu.emulator.Emulator" />
+        <Bug  pattern="RR_NOT_CHECKED" />
+    </Match>
+    
+    <Match>
+        <Class name="com.alexdforeman.emu.emulator.opcodes.StateHelper" />
+    </Match>
+</FindBugsFilter>

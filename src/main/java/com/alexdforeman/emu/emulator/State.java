@@ -22,7 +22,7 @@ public class State {
      * @param memory_ int[]
      */
     public State(int[] memory_) {
-        _memory = memory_;
+        _memory = memory_.clone();
     }
 
     /**
@@ -155,14 +155,16 @@ public class State {
      * Getter.
      * @return int[]
      */
+    //CHECKSTYLE:OFF
     public final int[] getMemory() {
         return _memory;
     }
+    //CHECKSTYLE:ON
     /**
      * Setter.
      * @param memory_ int[]
      */
     public final void setMemory(int[] memory_) {
-        _memory = memory_;
+        _memory = memory_.clone();
     }
 }
